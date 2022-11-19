@@ -18,8 +18,10 @@ function Home() {
       <button className="button" onClick={fetching}>
         Obtain
       </button>
-      <div className="scroll">{content}</div>
-      <div className="author">{author}</div>
+      <div className="output">
+        <div className="scroll">{content}</div>
+        <div className="author">{author}</div>
+      </div>
     </div>
   );
 }
