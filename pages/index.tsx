@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Card, Container, Button } from 'react-bootstrap';
 
 function Home() {
   const [content, setContent] = useState<string>('');
@@ -14,14 +15,16 @@ function Home() {
   };
   return (
     <div>
-      <h1 className="title">Quote of the Day</h1>
-      <button className="button" onClick={fetching}>
-        Obtain
-      </button>
-      <div className="output">
-        <div className="scroll">{content}</div>
-        <div className="author">{author}</div>
-      </div>
+      <h1 className="display-4">Quote of the Day</h1>
+      <Container>
+        <Button onClick={fetching}>Obtain</Button>
+      </Container>
+      <Container className="my-3">
+        <Card style={{ minWidth: '400px', minHeight: '300px' }}>
+          <Card.Title className="text-center mt-5">{content}</Card.Title>
+        </Card>
+        {author ? <Card.Footer>{author}</Card.Footer> : null}
+      </Container>
     </div>
   );
 }
