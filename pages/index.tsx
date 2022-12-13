@@ -14,18 +14,20 @@ function Home() {
     }
   };
   return (
-    <div>
-      <h1 className="display-4">Quote of the Day</h1>
+    <>
+      <h1 className="display-4 p-3">Quote of the Day</h1>
       <Container>
         <Button onClick={fetching}>Obtain</Button>
       </Container>
       <Container className="my-3">
-        <Card style={{ minWidth: '400px', minHeight: '300px' }}>
-          <Card.Title className="text-center mt-5">{content}</Card.Title>
+        <Card
+          style={{ backgroundColor: 'rgb(179, 230, 230)', maxWidth: '600px' }}
+        >
+          <Card.Title className="text-center m-5">{content}</Card.Title>
         </Card>
         {author ? <Card.Footer>{author}</Card.Footer> : null}
       </Container>
-    </div>
+    </>
   );
 }
 
